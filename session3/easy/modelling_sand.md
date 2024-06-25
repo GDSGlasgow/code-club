@@ -18,15 +18,19 @@ There are three posible outcomes when the grain reaches a second grain of sand. 
 Create a `Grain` class which can model this behaviour. It should have attributes indicating its current position and whether it is currently at rest. The class should also include a `time_step()` method which takes an array as an argument, and updates the grain's position according its current position and the status of the surrounding cells in the array.
 
 For example, consider a grain initialised as:
-
-`>>> grain = Grain(i=5, j=9, is_stationary=False)`
+```python
+>>> grain = Grain(i=5, j=9, is_stationary=False)
+```
 
 With an array initialised as:
 
-`>>> array = np.zeros((11,10))`
+```python
+>>> array = np.zeros((11,10))
+```
 
 Then we would expect the following behaviour:
-```
+
+```python
 >>> grain.time_step(array)
 >>> print(f'({grain.i}, {grain.j})') # show the positions as (i,j)
 (5, 8)
@@ -42,7 +46,8 @@ True
 ```
 
 And we expect following behaviour when the grain is in contact with another grain at $(5,0)$:
-```
+
+```python
 >>> array = np.zeros((11,10))
 >>> array[5,0] = 1 # add a grain at (5,0)
 >>> grain = Grain(i=5, j=1, is_stationary=False) # initialise to cell above existing grain
