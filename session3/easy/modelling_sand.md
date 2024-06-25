@@ -41,7 +41,7 @@ Then we would expect the following behaviour:
 True
 ```
 
-And the following behaviour when the grain is in contact with another grain at $(5,9)$
+And we expecyt following behaviour when the grain is in contact with another grain at $(5,9)$:
 ```
 >>> array = np.zeros((11,1))
 >>> array[5,0] = 1 # add a grain at (5,0)
