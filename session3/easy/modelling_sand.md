@@ -1,4 +1,4 @@
-# Modelling Sand
+# Part 1: Modelling a single grain of sand
 In this Code Club session we are going to model falling sand using object oriented programming (OOP). In this first task we will construct a class (or object) which models the behaviour of a falling grain of sand under different conditions. 
 
 If you are new to OOP you can find information classes and objects in Python [here](https://www.geeksforgeeks.org/python-classes-and-objects/).
