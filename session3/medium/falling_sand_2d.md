@@ -4,4 +4,4 @@ In this part, we will use the `Grain` class developed in part 1 to model the beh
 Use multiple instances of your `Grain` class to find out the status of the array at $t=100$, $t=500$ and $t=2500$. 
 
 ## Extension
-How do your outputs differ if the starting position of the grain is now selected at a random position on the first row? What if the starting position is selected by a ranodm walk (i.e. if position $p_t = (i, 49)$ then $p_{t+1} = (i \pm 1, 49)$ )?
+How do your outputs differ if the starting position of the grain is now selected at a random position on the first row? What if the starting position is selected by a random walk (i.e. if position $p_t = (i, 49)$ then $p_{t+1} = (i \pm 1, 49)$ )?
