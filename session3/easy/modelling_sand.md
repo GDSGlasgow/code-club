@@ -4,7 +4,7 @@ In this Code Club session we are going to try to model falling sand using object
 If you are new to OOP you can find information classes and objects in Python [here](https://www.geeksforgeeks.org/python-classes-and-objects/).
 
 # Falling Sand
-For this first task we will try to model the behaviour of a single peice of sand in multiple scenarios. We will model the behaviour of the sand on a 11x10 array with the grain taking up exactly one cell in that array. This description assumes the array is zero indexed, and uses $i$ and $j$ to refer to horizontal and vertical indices, resprectively. 
+For this first task we will try to model the behaviour of a single peice of sand in multiple scenarios. We will model the behaviour of the sand on a $11x10$ array, in which a grain of sand takes up exactly one cell. We will assume the array is zero indexed, and uses $i$ and $j$ to refer to horizontal and vertical indices, resprectively, such that $0\leq i \leq 10$ and $0 \leq j \leq 9$. 
 
 The grain will start at position $(5,0)$, and falling one cell vertically down at each timestep, so that at time $t=0$ the position is $(5,0)$, then at $t=1$ we have $(5,1)$ and so on. The grain falls like this until its path is blocked by either the bottom of the array (i.e. any position $(i,9)$) or another (stationary) grain of sand.
 
