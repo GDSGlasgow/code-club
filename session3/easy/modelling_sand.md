@@ -45,7 +45,7 @@ And we expect following behaviour when the grain is in contact with another grai
 ```
 >>> array = np.zeros((11,10))
 >>> array[5,0] = 1 # add a grain at (5,0)
->>> grain = Grain(5,1) # initialise to cell above existing grain
+>>> grain = Grain(i=5, j=1, is_stationary=False) # initialise to cell above existing grain
 >>> grain.time_step(array)
 >>> print(f'({grain.i}, {grain.j})')
 (4, 0)
