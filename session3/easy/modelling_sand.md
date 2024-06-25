@@ -41,17 +41,17 @@ Then we would expect the following behaviour:
 True
 ```
 
-And the following behaviour when the grain is in contact with another grain at $(5,0)$
+And the following behaviour when the grain is in contact with another grain at $(5,9)$
 ```
 >>> array = np.zeros((11,1))
->>> array[5,0] = 1 # add a grain at (5,0)
->>> grain = Grain(5,1) # initialise to cell above existing grain
+>>> array[5,9] = 1 # add a grain at (5,9)
+>>> grain = Grain(5,8) # initialise to cell above existing grain
 >>> grain.time_step(array)
 >>> print(f'({grain.i}, {grain.j})')
-(4, 0)
+(4, 9)
 >>> grain.is_stationary
 True
 ```
-Noting that either $(4,0)$ or $(6,0)$ would be valid locations in this instance. Other behaviour, such as what happens at the boundary of the array, follow in a similar fashion.
+Noting that either $(4,9)$ or $(6,9)$ would be valid locations in this instance. Other behaviour, such as what happens at the boundary of the array, follow in a similar fashion.
 
 You should demonstrate the behaviour of your `Grain` object by testing it on all the potential scenarios it might encounter.
