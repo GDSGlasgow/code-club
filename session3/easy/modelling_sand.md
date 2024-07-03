@@ -4,11 +4,11 @@ In this Code Club session we are going to model falling sand using object orient
 If you are new to OOP you can find information classes and objects in Python [here](https://www.geeksforgeeks.org/python-classes-and-objects/).
 
 # Falling Sand
-For this task we will model the behaviour of a single grain of sand in multiple scenarios. We will model the behaviour of the sand on a $11\times 10$ array, in which a grain of sand takes up exactly one cell. We will assume the array is zero indexed, and uses $i$ and $j$ to refer to horizontal and vertical indices, respectively, such that $0\leq i \leq 10$ and $0 \leq j \leq 9$. 
+For this task, we will model the behaviour of a single grain of sand in multiple scenarios. The sand will be modelled on a $11\times 10$ array, with a single grain taking up exactly one cell in the array. We will assume the array is zero indexed, and uses $i$ and $j$ to refer to horizontal and vertical indices, respectively, such that $0\leq i \leq 10$ and $0 \leq j \leq 9$. 
 
-The grain will start at position $p_0 = (5,9)$ and fall vertically down one cell at each timestep. Hence, that at time $t=0$ its position is $p_0=(5,9)$, at $t=1$ it's at $p_1 = (5,8)$, and at time $t$ its position is $p_t = (5, 9-t)$. The grain falls like this until its path is blocked by either the bottom of the array (i.e. any position $p=(i,0)$ ) or another (stationary) grain of sand.
+The grain starts at position $p_0 = (5,9)$ and falls vertically down one cell per timestep. Hence, at time $t=0$ its position is $p_0=(5,9)$, at $t=1$ it is at $p_1 = (5,8)$, and at time $t$ its position is $p_t = (5, 9-t)$. The grain falls like this until its path is blocked by either the bottom of the array (i.e. any position $p=(i,0)$ ) or another (stationary) grain of sand.
 
-There are three posible outcomes when the grain reaches a second grain of sand. Consider a falling grain at position $p_t=(i,j)$, which has fallen on top of a second grain at position $q=(i,j-1)$. The grain can move diagonally into cells $(i-1,j-1)$ or $(i+1,j-1)$ if they are (a) not occupied by abother grain and (b) not beyond the boundary of the array at $i<0$ or $i>10$. Hence, the three possible moves are:
+There are three posible outcomes when the grain reaches a second grain of sand. Consider a falling grain at position $p_t=(i,j)$, which has fallen on top of a second grain at position $q=(i,j-1)$. The grain can move diagonally into cells $(i-1,j-1)$ or $(i+1,j-1)$ if they are (a) not occupied by another grain and (b) not beyond the boundary of the array at $i<0$ or $i>10$. Hence, the three possible moves are:
 
 1. If both cells $(i-1, j+1)$ and $(i+1, j+1)$ are available, the grain moves into either cell with probability $P=0.5$.
 2. If only one of cells $(i-1, j+1)$ or $(i+1, j+1)$ are available, the grain moves into the empty cell with probability $P=1$.
@@ -19,13 +19,13 @@ Create a `Grain` class which can model this behaviour. It should have attributes
 
 For example, consider a grain initialised as:
 ```python
->>> grain = Grain(i=5, j=9, is_stationary=False)
+>>> grain = Grain(i=5, j=9, is_stationary=False) # i.e. a moving grain at position (5,9)
 ```
 
 With an array initialised as:
 
 ```python
->>> array = np.zeros((11,10))
+>>> array = np.zeros((11,10)) # an array of zeros
 ```
 
 Then we would expect the following behaviour:
@@ -36,10 +36,10 @@ Then we would expect the following behaviour:
 (5, 8)
 >>> for ii in range(8):
 ...     grain.time_step(array)
->>> print(f'({grain.i}, {grain.j})')
+>>> print(f'({grain.i}, {grain.j})') # grain has moved to bottom of array
 (5, 0)
 >>> grain.time_step(array)
->>> print(f'({grain.i}, {grain.j})') # noting the grain is at the bottom of th array
+>>> print(f'({grain.i}, {grain.j})') # grain should not move further
 (5, 0)
 >>> grain.is_stationary
 True
