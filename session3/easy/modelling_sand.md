@@ -10,9 +10,9 @@ The grain starts at position $p_0 = (5,9)$ and falls vertically down one cell pe
 
 There are three posible outcomes when the grain reaches a second grain of sand. Consider a falling grain at position $p_t=(i,j)$, which has fallen on top of a second grain at position $q=(i,j-1)$. The grain can move diagonally into cells $(i-1,j-1)$ or $(i+1,j-1)$ if they are (a) not occupied by another grain and (b) not beyond the boundary of the array at $i<0$ or $i>10$. Hence, the three possible moves are:
 
-1. If both cells $(i-1, j+1)$ and $(i+1, j+1)$ are available, the grain moves into either cell with probability $P=0.5$.
-2. If only one of cells $(i-1, j+1)$ or $(i+1, j+1)$ are available, the grain moves into the empty cell with probability $P=1$.
-3. If neither cells $(i-1, j+1)$ or $(i+1, j+1)$ are available, the grain comes to rest in its current position.
+1. If both cells $(i-1, j-1)$ and $(i+1, j-1)$ are available, the grain moves into either cell with probability $P=0.5$.
+2. If only one of cells $(i-1, j-1)$ or $(i+1, j-1)$ are available, the grain moves into the empty cell with probability $P=1$.
+3. If neither cells $(i-1, j+1)$ or $(i+1, j-1)$ are available, the grain comes to rest in its current position.
 
 # Building a `Grain` of sand
 Create a `Grain` class which can model this behaviour. It should have attributes indicating its current position and whether it is currently at rest. The class should also include a `time_step()` method which takes an array as an argument, and updates the grain's position according its current position and the status of the surrounding cells in the array.
